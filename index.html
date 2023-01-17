@@ -7,10 +7,40 @@
     <title>React Basic</title>
 </head>
 <body>
-    <h3>
-        Hi from React
-    </h3>
+    <h2>
+        Hi I am not part of React app of yours 😅
+    </h2>
+    <div id="root">
+        <h1>I don't matter if you are using React</h1>
+    </div>
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+        const element1 = React.createElement('h4', 
+        {
+            className: 'class_test', 
+            style: {
+                background: 'lightblue'
+            }
+        }, 
+        'Namaste From React ⚡⚡')
+
+        const element2 = React.createElement('h5', 
+        {
+            className: 'class_test', 
+            style: {
+                background: 'lightblue'
+            }
+        }, 
+        'Heading 5️⃣')
+        
+        const container = React.createElement('div', {title: 'div-test'}, [element1, element2])
+        
+        console.log(container)
+        const root = ReactDOM.createRoot(document.getElementById('root'))
+
+        root.render(container)
+        
+    </script>
 </body>
 </html>
