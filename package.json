@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React basics",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
@@ -19,13 +19,16 @@
   "homepage": "https://github.com/vinaylamba9/namaste-react-practice#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",
-    "process": "^0.11.10"
+    "postcss": "^8.4.21",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.2.4"
   },
   "browserslist": [
     "last 2 Chrome versions"
