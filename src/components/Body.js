@@ -36,10 +36,10 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="search-container">
+      <div className="bg-orange-500 my-5 p-5">
         <input
           type="text"
-          className="search-input"
+          className="p-2 m-2 focus:bg-green-100 rounded"
           placeholder="Search"
           value={searchText}
           onChange={(e) => {
@@ -47,7 +47,7 @@ const Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="bg-green-500 hover:bg-green-700 text-white p-1 rounded-md ml-5"
           onClick={() => {
             //need to filter the data
             const data = filterData(searchText, allRestaurants);
@@ -58,7 +58,7 @@ const Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="flex flex-wrap">
         {/* You have to write logic for NO restraunt fount here */}
         {filteredRestaurants.map((restaurant) => {
           return (

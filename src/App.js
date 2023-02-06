@@ -19,6 +19,8 @@ const About = lazy(() => import("./components/About"));
 // On Demand Loading
 // Dynamic Import
 
+// All are same only
+
 const AppLayout = () => {
   return (
     <>
@@ -75,3 +77,14 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />);
+
+
+/*
+
+In a Create React App project, the linking between index.js and index.html is done using a build tool such as Webpack. 
+Webpack takes your index.js file as an entry point, bundles all of your dependencies and application code into a single 
+JavaScript file, and then injects that file into your index.html file as a script tag.
+
+👉 For parcel, we exported this App.js file and we are using it in the index.html file as a module type with script tag.
+
+*/
