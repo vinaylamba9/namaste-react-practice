@@ -2,6 +2,7 @@ import { Outlet } from "react-router-dom";
 import ProfileFunctionalComponet from "./Profile";
 import Profile from "./ProfileClass";
 import { Component } from "react";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
@@ -17,6 +18,9 @@ class About extends Component {
     //console.log("Parent - render");
     return (
       <div>
+        <UserContext.Consumer >
+          {(value) => <h1>Testing Context data coming from data layer: {value.user.name}</h1>}
+        </UserContext.Consumer>
         <h1>About Us Page</h1>
         <p>
           This is the Namaste React Live Course Chapter 07 - Finding the Path 🚀

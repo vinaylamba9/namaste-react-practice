@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestrauntMenu";
 import Profile from "./components/Profile";
 import Shimmer from "./components/Shimmer";
+import UserContext from "./utils/UserContext";
 
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
@@ -22,11 +23,22 @@ const About = lazy(() => import("./components/About"));
 // All are same only
 
 const AppLayout = () => {
+
+  const [user, setUser] = useState({
+    name: 'Vinay',
+    email: 'vinay22@gmail.com'
+  })
+
   return (
     <>
+    <UserContext.Provider value={{
+      user: user,
+      setUser: setUser
+    }}>
       <Header />
       <Outlet />
       <Footer />
+    </UserContext.Provider>
     </>
   );
 };
@@ -81,7 +93,7 @@ root.render(<RouterProvider router={appRouter} />);
 
 /*
 
-In a Create React App project, the linking between index.js and index.html is done using a build tool such as Webpack. 
+In a create-react-app project, the linking between index.js and index.html is done using a build tool such as Webpack. 
 Webpack takes your index.js file as an entry point, bundles all of your dependencies and application code into a single 
 JavaScript file, and then injects that file into your index.html file as a script tag.
 

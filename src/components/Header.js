@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Logo from "../assets/img/foodvilla.png";
 import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
+import UserContext from "../utils/UserContext";
 
 // SPA - Single Page Application???
 // Client Side Routing
@@ -16,6 +17,7 @@ const Header = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const isOnline = useOnline();
+  const { user } = useContext(UserContext)
 
   return (
     <div className="flex justify-between bg-cyan-500 text-white shadow-lg">
@@ -40,9 +42,9 @@ const Header = () => {
       </div>
       <h1 className="flex items-center">{isOnline ? "✅" : "🔴"}</h1>
       {isLoggedIn ? (
-        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+        <button className="mr-5 font-bold" onClick={() => setIsLoggedIn(false)}>Logout</button>
       ) : (
-        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+        <button className="mr-5 font-bold" onClick={() => setIsLoggedIn(true)}>{user.name}</button>
       )}
     </div>
   );
